@@ -24,6 +24,7 @@
 #include <iostream>
 #include <optional>
 #include <thread>
+#include <string>
 
 namespace be = boost::beast;
 namespace asio = boost::asio;
@@ -99,10 +100,12 @@ int main(int argc, char* argv[]) try {
       response.set(be::http::field::server, BOOST_BEAST_VERSION_STRING);
       response.set(be::http::field::content_type, "text/plain");
       response.keep_alive(request.keep_alive());
-      std::string greeting = "Hello! abcabcabcdefg";
+
+      std::string greeting = "Hello! 1+2 = " + std::to_string(sumOfTwoNumbers(1,2)) + "\n";
       // auto const* target = std::getenv("TARGET");
       // greeting += target == nullptr ? "World" : target;
-      greeting += "\n";
+      // greeting += "\n";
+      
       response.body() = std::move(greeting);
       response.prepare_payload();
       be::http::write(socket, response, ec);

@@ -60,6 +60,7 @@ RUN cmake -S/v/source -B/v/binary -GNinja \
 # Compile the binary and strip it to reduce its size.
 RUN cmake --build /v/binary
 RUN strip /v/binary/cloud_run_hello
+RUN cd /v/binary && ctest -C Debug --output-on-failure
 
 # Create the final deployment image, using `scratch` (the empty Docker image)
 # as the starting point. Effectively we create an image that only contains
