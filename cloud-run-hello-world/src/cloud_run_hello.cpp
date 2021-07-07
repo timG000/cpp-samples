@@ -25,7 +25,6 @@
 #include <optional>
 #include <thread>
 #include <string>
-#include "../headers/utils.h"
 
 namespace be = boost::beast;
 namespace asio = boost::asio;
