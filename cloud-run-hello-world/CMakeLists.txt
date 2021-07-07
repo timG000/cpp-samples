@@ -24,6 +24,14 @@ project(cpp-samples-cloud-run-hello-world CXX C)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# set(Boost_USE_STATIC_LIBS OFF) 
+# set(Boost_USE_MULTITHREADED ON)  
+# set(Boost_USE_STATIC_RUNTIME OFF) 
+
+# SET(CMAKE_INCLUDE_PATH ${CMAKE_INCLUDE_PATH} "C:/Program Files/boost_1_66_0")
+# SET(CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_PATH} "C:/Program Files/boost_1_66_0/libs")
+
+# include(../../../vcpkg/vcpkg/scripts/buildsystems/vcpkg.cmake)
 find_package(Boost 1.66 REQUIRED COMPONENTS program_options)
 find_package(Threads)
 

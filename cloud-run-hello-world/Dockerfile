@@ -19,6 +19,9 @@
 ARG DISTRO_VERSION=edge
 FROM alpine:${DISTRO_VERSION} AS base
 
+# ARG DISTRO_VERSION=latest
+# FROM ubuntu:${DISTRO_VERSION} AS base
+
 # Create separate targets for each phase, this allows us to cache intermediate
 # stages when using Google Cloud Build, and makes the final deployment stage
 # small as it contains only what is needed.
