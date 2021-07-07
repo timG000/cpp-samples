@@ -102,7 +102,7 @@ int main(int argc, char* argv[]) try {
       response.set(be::http::field::content_type, "text/plain");
       response.keep_alive(request.keep_alive());
 
-      std::string greeting = "Hello! 1+2 = " + std::to_string(sumOfTwoNumbers(1,2)) + "\n" + "Listening on " + std::to_string(address) + ":" + std::to_string(port) + std::endl;;
+      std::string greeting = "Hello! 1+2 = " + std::to_string(sumOfTwoNumbers(1,2)) + "\n";
       // auto const* target = std::getenv("TARGET");
       // greeting += target == nullptr ? "World" : target;
       // greeting += "\n";
